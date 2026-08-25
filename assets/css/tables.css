@@ -1,0 +1,81 @@
+/**
+ * ============================================================================
+ * TABLES.CSS — Barra de filtros e tabelas inteligentes (DataTables)
+ * ============================================================================
+ */
+
+/* =========================================================================
+   MÓDULO: FILTROS
+   ========================================================================= */
+.filters-bar{ padding:16px 18px; margin-bottom:20px; }
+.filters-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:12px; align-items:end;}
+.filter-group label{ display:block; font-size:10.5px; color:var(--gray); font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px;}
+.filter-group select, .filter-group input{
+  width:100%; padding:8px 10px; border-radius:9px; border:1px solid var(--border);
+  background:var(--card-2); color:var(--text); font-size:12.5px; outline:none; transition:border .18s ease;
+}
+.filter-group select:focus, .filter-group input:focus{ border-color:var(--primary); }
+.filter-group.range{ display:flex; gap:6px; }
+.filters-footer{ display:flex; justify-content:space-between; align-items:center; margin-top:14px; flex-wrap:wrap; gap:10px;}
+#filterCount{ font-size:11.6px; color:var(--gray);}
+#filterCount b{ color:var(--primary); }
+.btn-clear{ font-size:11.8px; font-weight:700; color:var(--red); background:rgba(239,68,68,.1); border:1px solid rgba(239,68,68,.3); padding:8px 14px; border-radius:9px;}
+.btn-clear:hover{ background:rgba(239,68,68,.2); }
+.search-global{ position:relative; }
+.search-global i{ position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--gray); font-size:12px;}
+.search-global input{ padding-left:32px; }
+
+/* =========================================================================
+
+   MÓDULO: TABELA / DATATABLE
+   ========================================================================= */
+.table-toolbar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;}
+.table-toolbar .btns{ display:flex; gap:8px; flex-wrap:wrap;}
+table.dataTable{ width:100% !important; color:var(--text); border-collapse:separate !important; border-spacing:0 6px !important; }
+table.dataTable thead th{
+  background:transparent; color:var(--gray); font-size:10.3px; text-transform:uppercase; letter-spacing:.6px;
+  border-bottom:1px solid var(--border) !important; padding:10px 12px !important; font-weight:700;
+}
+table.dataTable tbody tr{ background:var(--card-2); }
+table.dataTable tbody td{ padding:11px 12px !important; font-size:12.3px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+table.dataTable tbody td:first-child{ border-left:1px solid var(--border); border-radius:9px 0 0 9px;}
+table.dataTable tbody td:last-child{ border-right:1px solid var(--border); border-radius:0 9px 9px 0;}
+table.dataTable tbody tr:hover td{ background:rgba(212,175,106,.08); }
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper .dataTables_length select{
+  background:var(--card-2); border:1px solid var(--border); color:var(--text); border-radius:8px; padding:5px 9px; margin-left:6px;
+}
+.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter{ color:var(--gray); font-size:12px; }
+.dataTables_wrapper .dataTables_paginate .paginate_button{ color:var(--text) !important; border-radius:7px !important; padding:4px 10px !important; }
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{ background:var(--primary) !important; color:#fff !important; border:none !important;}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{ background:var(--card-2) !important; color:var(--text) !important;}
+.col-toggle-menu{ position:relative; display:inline-block; }
+.col-toggle-panel{
+  display:none; position:absolute; right:0; top:44px; z-index:50; width:220px; padding:12px;
+  max-height:280px; overflow-y:auto;
+}
+.col-toggle-panel.show{ display:block; }
+.col-toggle-panel label{ display:flex; align-items:center; gap:8px; font-size:12px; padding:6px 4px; }
+
+.status-pill{ font-size:10.3px; font-weight:800; padding:3px 10px; border-radius:20px; display:inline-flex; align-items:center; gap:5px;}
+.status-vencido{ background:rgba(239,68,68,.14); color:var(--red);}
+.status-prazo{ background:rgba(16,185,129,.14); color:var(--green);}
+.pill-sim{ background:rgba(16,185,129,.14); color:var(--green); }
+.pill-nao{ background:rgba(155,170,184,.14); color:var(--gray); }
+
+/* =========================================================================
+
+/* =========================================================================
+   MÓDULO: TABELA SIMPLES (setor Apreensões — sem DataTable, HTML puro)
+   ========================================================================= */
+table.summary{ width:100%; border-collapse:collapse; }
+table.summary thead th{
+  background:var(--card-2); color:var(--gray); font-size:10.4px; text-transform:uppercase; letter-spacing:.6px;
+  font-weight:700; padding:11px 13px; text-align:left; border-bottom:1px solid var(--border);
+}
+table.summary tbody td{ padding:12px 13px; font-size:12.4px; border-bottom:1px solid var(--border); }
+table.summary tbody tr:last-child td{ border-bottom:none; }
+table.summary tbody tr{ transition:background .15s ease; }
+table.summary tbody tr:hover{ background:rgba(212,175,106,.05); }
+.mono{ font-family:var(--font-display); font-variant-numeric:tabular-nums; }
+.tag-banco{ font-size:10.6px; font-weight:700; padding:3px 9px; border-radius:20px; background:rgba(212,175,106,.16); color:var(--primary); display:inline-block;}
